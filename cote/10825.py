@@ -17,8 +17,13 @@ OUTPUT : 정렬 기준으로 N개의 줄에 걸쳐 학생 이름 출력
 '''
 
 N = int(input())
-Student 
+score = []
 
-# score[1] = Korean
-# score[2] = English
-# score[3] = Math
+for i in range(N):
+    [name, kor, eng, math] = map(str, input().split())
+    score.append([name, int(kor), int(eng), int(math)])
+
+sorted_score = sorted(score, key=lambda x : (-x[1], x[2], -x[3], x[0]))
+
+for score in sorted_score:
+    print(score[0])
