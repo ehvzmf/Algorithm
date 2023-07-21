@@ -10,5 +10,12 @@ OUTPUT : 첫째 줄에 길이가 N인 오르막 수의 개수를 10,007로 나�
 '''
 
 N = int(input())
-if i in range(N):
-  
+result = 0
+
+dp = [1] * 10
+
+for i in range(1, N):
+  for j in range(1, 10):
+    dp[j] += dp[j-1]
+result = sum(dp) % 10007
+print(result)
