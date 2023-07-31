@@ -6,7 +6,24 @@ OUTPUT : 라이언이 가장 큰 점수 차이로 우승하기 위해 n발의 �
 '''
 
 def solution(n, info):
-    for i in range(len(info)):
-        if 
-    answer = []
+    max = [-1] * 12
+    for win in range(1 << 10):
+        # 10-1 점수별 화살 개수, 0점 개수, 점수차이
+        cur = [0] * 10 + [n, 0]
+        for i in range(10): 
+            if win & (1 << i):
+                cur[-1] += 10 - i
+                cur[-2] -= info[i] + 1
+                cur[i] = info[i] + 1
+            elif info[i] != 0:     # 어피치 점수 획득
+                cur[-1] -= 10 - i
+        # 라이언이 지거나 화살을 n발 초과로 쏜 경우
+        if cur[-1] <= 0 or cur[-2] < 0:
+            continue
+            
+        if cur[::-1] > max[::-1]:
+            max = cur
+    if max[-1] <= 0:
+        answer = [-1]
+    else: answer = max[:-1]
     return answer
