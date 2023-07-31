@@ -4,12 +4,25 @@ https://school.programmers.co.kr/learn/courses/30/lessons/92343
 '''
 
 def solution(info, edges):
-    # info - 0은 양, 1은 늑대
+    visited = [0] * len(info)
+    answer = []
     
-    for i in (info):
-        if info[i] == 0: 
-            
-            
-        else: 
-    answer = 0
-    return answer
+    def dfs(sheep, wolf):
+        if sheep > wolf:
+            answer.append(sheep)
+        else:
+            return
+        
+        for p, c in edges:
+            if visited[p] and not visited[c]:
+                visited[c] = 1
+                if info[c] == 0:
+                    dfs(sheep + 1, wolf)
+                else:
+                    dfs(sheep,wolf + 1)
+                visited[c] = 0
+                
+    visited[0] = 1
+    dfs(1, 0)
+    
+    return max(answer)
