@@ -1,5 +1,7 @@
 '''
-
+https://school.programmers.co.kr/learn/courses/30/lessons/49189
+프로그래머스 : 가장 먼 노드 (bfs) 
+다른 풀이
 '''
 def solution(n, edge):
     graph =[  [] for _ in range(n + 1) ]
