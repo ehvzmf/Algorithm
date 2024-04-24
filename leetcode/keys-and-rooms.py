@@ -1,5 +1,5 @@
 '''
-https://velog.io/@robotroniq/LeetCode-841.-Keys-and-Rooms
+https://leetcode.com/problems/keys-and-rooms/
 4조 스터디 3주차 기초 문제 (그래프)
 '''
 
