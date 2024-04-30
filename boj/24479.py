@@ -3,6 +3,7 @@ https://www.acmicpc.net/problem/24479
 백준 24479: 알고리즘 수업 - 깊이 우선 탐색 1 (dfs)
 쌩 기초
 '''
+
 import sys
 sys.setrecursionlimit(10 ** 6)
 input = sys.stdin.readline
