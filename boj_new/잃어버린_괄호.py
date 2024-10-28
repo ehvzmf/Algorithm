@@ -5,10 +5,9 @@ https://www.acmicpc.net/problem/1541
 # 주어진 식에 괄호를 쳐서 이 값을 최소로 만들자. 
 
 expression = input()
-
-# -를 기준으로 나눈다. 
 terms = expression.split('-')
 
+# 첫번째는 -로 시작하는 경우가 있어서 따로 처리
 result = sum(map(int, terms[0].split('+')))
 
 for term in terms[1:]:
