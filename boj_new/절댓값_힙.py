@@ -14,7 +14,7 @@ n = int(input())
 q = []
 
 for i in range(n):
-    a = int(input())
+    a = int(sys.stdin.readline().rstrip())
     if a != 0:
         heapq.heappush(q, (abs(a), a))
     else:
