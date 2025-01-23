@@ -7,4 +7,18 @@
 2. 배열에서 절댓값이 가장 작은 값을 출력하고, 그 값을 배열에서 제거
 '''
 
+import sys
+import heapq
+
 n = int(input())
+q = []
+
+for i in range(n):
+    a = int(input())
+    if a != 0:
+        heapq.heappush(q, (abs(a), a))
+    else:
+        if not q:
+            print(0)
+        else:
+            print(heapq.heappop(q)[1])
