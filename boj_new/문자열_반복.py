@@ -4,4 +4,7 @@
 T = int(input())
 for _ in range(T):
     R, S = map(str, input().split())
-    
+    string = ''
+    for s in S:
+        string += s * int(R)
+    print(string)
