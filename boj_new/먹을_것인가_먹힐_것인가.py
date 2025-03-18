@@ -1,6 +1,8 @@
 # https://www.acmicpc.net/problem/7795
 # 백준 실버3, 이분탐색/투 포인터
 
+import bisect
+
 def bin_search(li, a):
     s, e = 0, len(li) - 1
     res = -1
@@ -13,9 +15,7 @@ def bin_search(li, a):
             e = m - 1
     return res
 
-
 t = int(input())
-
 for _ in range(t):
     n, m = map(int, input().split())
     A = sorted(list(map(int, input().split())))
@@ -23,6 +23,6 @@ for _ in range(t):
     answer = 0
 
     for a in A:
-        answer += (bin_search(B, a) + 1)
+        answer += (bisect.bisect(B, a-1))
     
     print(answer)
