@@ -1,3 +1,6 @@
+// https://www.acmicpc.net/problem/2566
+// 구현
+
 const input = require('fs').readFileSync('/dev/stdin', 'utf-8').trim().split('\n').map(line => line.split(' ').map(Number));
 
 let maxVal = -1; 
